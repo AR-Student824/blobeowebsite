@@ -13,6 +13,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+      <nav style={{backgroundColor: "#121212 !important"}} className="navbar navbar-expand-lg navbar-dark">
+  <a style={{backgroundColor: "#121212"}} className="navbar-brand" href="#">Blobeo</a>
+</nav>
         <div className={styles.top}>
         <h1 className={styles.title}>
           PP

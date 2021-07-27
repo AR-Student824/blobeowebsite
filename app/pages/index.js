@@ -2,9 +2,25 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from "next/link"
+import Typed from 'typed.js';
+import { useEffect, useState } from 'react';
+
 
 
 export default function Home() {
+  useEffect(() => {
+    var typed = new Typed('#typed', {
+      stringsElement: '#typed-strings',
+      startdelay: 1000,
+      typeSpeed: 100,
+      backDelay: 500,
+      backSpeed: 100
+    });
+  }, [])
+  useEffect(() => {
+    typeof document !== undefined ? require('bootstrap/dist/js/bootstrap') : null
+}, [])
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,24 +29,39 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.main}  style={{backgroundColor: "#121212"}}>
+      <nav style={{backgroundColor: "#121212 !important"}} className="navbar navbar-expand-lg navbar-dark">
+  <a style={{backgroundColor: "#121212"}} className="navbar-brand" href="#">Blobeo</a>
+</nav>
         <div className={styles.top}>
         <h1 className={styles.title}>
-          Introducing Blobeo
+          Introducing <span id="typed">Blobeo</span>
         </h1>
+        <div id="typed-strings" style={{display: "none"}}>
+          <h1>Blobeo</h1>
+          <h1>a new way to share</h1>
+          <h1>a new way to explore</h1>
+          <h1>a unique new bot for Discord</h1>
+          <h1>Blobeo</h1>
+
+        </div>
 
         <p className={styles.description}>
         Share videos, images, and GIFs right from Discord!
         </p>
         <center>
+        <Link href="/invite">
         <button className={styles.button}>Invite</button>
+        </Link>
         </center>
 </div>
         <div className={styles.grid}>
-          <a href="/invite" className={styles.card}>
+          <Link href="/invite">
+          <a className={styles.card}>
             <h2>Invite</h2>
             <p>Invite the bot to your server and start using Blobeo today</p>
           </a>
+          </Link>
 
           <a href="//www.blobby.me/premium" className={styles.card}>
             <h2>Premium</h2>
