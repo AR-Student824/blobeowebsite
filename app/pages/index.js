@@ -77,7 +77,7 @@ export default function Home() {
           </a>
 
           <a
-            href="/#ft"
+            href="#ft"
             className={styles.card}
           >
             <h2>Features</h2>
